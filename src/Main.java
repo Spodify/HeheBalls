@@ -1,4 +1,4 @@
-
+import java.awt.*;
 
 public class Main {
 
@@ -7,4 +7,12 @@ public class Main {
         flaggen f1 = new flaggen();
 
     }
+    public void mainMenu(){
+        MenuItem b1 = new MenuItem();
+
+    }
+
+
+
+
 }
