@@ -7,9 +7,9 @@ public class flaggen extends Figur{
 
 
     public flaggen(){
-        super("normal","rsc/Flaggen Leicht GIF/England.png");
-        String [] flaggenleicht = {"rsc/Flaggen Leicht PNG/Belgien.png", "rsc/Flaggen Leicht PNG/Brasilien.png", "rsc/Flaggen Leicht PNG/China.png", "rsc/Flaggen Leicht PNG/Deutschland.png","rsc/Flaggen Leicht PNG/England.png", "rsc/Flaggen Leicht PNG/Finnland.png",
-                                    "rsc/Flaggen Leicht PNG/Frankreich.png", "rsc/Flaggen Leicht PNG/Israel.png", "rsc/Flaggen Leicht PNG/Italien.png", "rsc/Flaggen Leicht PNG/Japan.png", "rsc/Flaggen Leicht PNG/Kanada.png", "rsc/Flaggen Leicht PNG/Kroatien.png",
+        super("normal","rsc/Flaggen Leicht GIF/Deutschland.gif");
+        String [] flaggenleicht = {"rsc/Flaggen Leicht GIF/Belgien.gif", "rsc/Flaggen Leicht GIF/Brasilien.gif", "rsc/Flaggen Leicht GIF/China.gif", "rsc/Flaggen Leicht GIF/Deutschland.gif","rsc/Flaggen Leicht GIF/England.gif", "rsc/Flaggen Leicht GIF/Finnland.gif",
+                                    "rsc/Flaggen Leicht GIF/Frankreich.gif", "rsc/Flaggen Leicht GIF/Israel.gif", "rsc/Flaggen Leicht GIF/Italien.gif", "rsc/Flaggen Leicht GIF/Japan.gif", "rsc/Flaggen Leicht GIF/Kanada.gif", "rsc/Flaggen Leicht PNG/Kroatien.png",
                                     "rsc/Flaggen Leicht PNG/Mexiko.png", "rsc/Flaggen Leicht PNG/Niederlande.png", "rsc/Flaggen Leicht PNG/Norwegen.png", "rsc/Flaggen Leicht PNG/Polen.png", "rsc/Flaggen Leicht PNG/Portugal.png", "rsc/Flaggen Leicht PNG/Russland.png",
                                     "rsc/Flaggen Leicht PNG/Schweden.png", "rsc/Flaggen Leicht PNG/Schweiz.png", "rsc/Flaggen Leicht PNG/Spanien.png", "rsc/Flaggen Leicht PNG/Suedkorea.png","rsc/Flaggen Leicht PNG/Ukraine.png"};
 
