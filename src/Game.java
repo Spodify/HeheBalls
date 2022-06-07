@@ -21,29 +21,31 @@ public class Game extends Spiel {
 
         flaggen f1 = new flaggen();
     }
-    void titleScreen(){
+    void titleScreen() {
         //benennt die aktive szene und ruft den titleScreen auf
-            benenneAktiveSzene("title");
-            TitleScreen ts = new TitleScreen();
-            MausKlickReagierbar dieSendungMitDer;
+        benenneAktiveSzene("title");
+        TitleScreen ts = new TitleScreen();
+        MausKlickReagierbar dieSendungMitDer;
 
-            registriereMausKlickReagierbar(
-                    dieSendungMitDer = new MausKlickReagierbar() {
+        registriereMausKlickReagierbar(
+                dieSendungMitDer = new MausKlickReagierbar() {
 
-                        @Override
-                        public void klickReagieren(double x, double y) {
-                            if (ts.flaggenLeicht.beinhaltetPunkt(x, y)) {
-                                leicht();
-                            }if(ts.flaggenMittel.beinhaltetPunkt(x, y)){
-                                mittel();
-
-                            }
+                    @Override
+                    public void klickReagieren(double x, double y) {
+                        if (ts.flaggenLeicht.beinhaltetPunkt(x, y)) {
+                            leicht();
                         }
+                        if (ts.flaggenMittel.beinhaltetPunkt(x, y)) {
+                            mittel();
 
-                    });
+                        }
+                    }
+
+                });
+
+    }
 
 
-        }
 
     public void leicht(){
         erzeugeNeueSzene();
@@ -54,6 +56,6 @@ public class Game extends Spiel {
         benenneAktiveSzene("mittel");
     }
 
-    }
+
 
 }
