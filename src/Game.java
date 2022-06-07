@@ -2,10 +2,6 @@ import ea.edu.Figur;
 import ea.edu.Spiel;
 import ea.edu.event.MausKlickReagierbar;
 
-import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.util.Arrays;
 import java.util.Random;
 
 public class Game extends Spiel {
@@ -27,10 +23,6 @@ public class Game extends Spiel {
 
     }
 
-    public void flaggenL(){
-
-        flaggen f1 = new flaggen();
-    }
     void titleScreen() {
         //benennt die aktive szene und ruft den titleScreen auf
         benenneAktiveSzene("title");
@@ -95,6 +87,31 @@ public class Game extends Spiel {
 
         buttonL[3] = new Figur("button","rsc/Flaggen Leicht GIF/Deutschland.gif");
         buttonL[3].setzeMittelpunkt(-3,-8);
+
+        MausKlickReagierbar dieSendungMitDer;
+
+        registriereMausKlickReagierbar(
+                dieSendungMitDer = new MausKlickReagierbar() {
+
+                    @Override
+                    public void klickReagieren(double x, double y) {
+                        if (buttonL[0].beinhaltetPunkt(x, y)) {
+                            System.out.println("1");
+                        }
+                        if (buttonL[1].beinhaltetPunkt(x, y)) {
+                            System.out.println("2");
+
+                        }
+                        if (buttonL[2].beinhaltetPunkt(x, y)) {
+                            System.out.println("3");
+                        }
+                        if (buttonL[3].beinhaltetPunkt(x, y)) {
+                            System.out.println("4");
+
+                        }
+                    }
+
+                });
 
 
     }

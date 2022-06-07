@@ -1,4 +1,4 @@
-
+/*
 
 
 import ea.edu.Figur;
@@ -31,3 +31,4 @@ public class flaggen {
 
     }
 }
+*/
