@@ -7,10 +7,7 @@ public class Main {
         Game g1 = new Game(1280, 720);
 
     }
-    public void mainMenu(){
-        MenuItem b1 = new MenuItem();
 
-    }
 
 
 
