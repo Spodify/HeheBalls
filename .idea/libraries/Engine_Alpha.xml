@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Engine.Alpha">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/+libs/Engine.Alpha.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/+libs/Engine.Alpha.jar!/" />
+    </SOURCES>
+  </library>
+</component>
