@@ -7,8 +7,8 @@ import java.util.Random;
 
 
 public class flaggen {
-        public Figur flagge;
-        String flaggenName;
+        public Figur flaggelecht;
+        String flaggenNamel;
         int index;
     public flaggen(){
 
@@ -24,14 +24,9 @@ public class flaggen {
                                     "rsc/Flaggen Mittel GIF/Suedafrika.gif", "rsc/Flaggen Mittel GIF/Zypern.gif"};
         Random rand = new Random();
         int index = rand.nextInt(flaggenleicht.length);
-        flaggenName = (flaggenleicht[index]);
+        flaggenNamel = (flaggenleicht[index]);
 
-        //flaggenName = ("rsc/Flaggen Leicht GIF/Belgien.gif");
-
-
-
-
-        flagge = new Figur("normal",flaggenName);
+        flaggelecht = new Figur("normal",flaggenNamel);
 
 
     }

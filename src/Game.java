@@ -23,30 +23,37 @@ public class Game extends Spiel {
     }
     void titleScreen(){
         //benennt die aktive szene und ruft den titleScreen auf
-        if (Arrays.stream(nenneSzenennamen()).anyMatch("title"::equals)) {
-            setzeAktiveSzene("title");
-        } else {
             benenneAktiveSzene("title");
             TitleScreen ts = new TitleScreen();
             MausKlickReagierbar dieSendungMitDer;
-            /*
+
             registriereMausKlickReagierbar(
                     dieSendungMitDer = new MausKlickReagierbar() {
 
                         @Override
                         public void klickReagieren(double x, double y) {
-                            if (ts.playButton.beinhaltetPunkt(x, y)) {
-                                gameScene();
-                            }if(ts.bohLogo.beinhaltetPunkt(x, y)){
-
+                            if (ts.flaggenLeicht.beinhaltetPunkt(x, y)) {
+                                leicht();
+                            }if(ts.flaggenMittel.beinhaltetPunkt(x, y)){
+                                mittel();
 
                             }
                         }
 
                     });
 
-             */
+
         }
+
+    public void leicht(){
+        erzeugeNeueSzene();
+        benenneAktiveSzene("lecht");
+    }
+    public void mittel(){
+        erzeugeNeueSzene();
+        benenneAktiveSzene("mittel");
+    }
+
     }
 
 }
