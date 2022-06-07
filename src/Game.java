@@ -191,7 +191,6 @@ public class Game extends Spiel {
                         }
                         if (buttonM[1].beinhaltetPunkt(x, y)) {
                             System.out.println("2");
-
                         }
                         if (buttonM[2].beinhaltetPunkt(x, y)) {
                             System.out.println("3");
