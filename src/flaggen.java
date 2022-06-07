@@ -8,6 +8,7 @@ public class flaggen extends Figur{
 
     public flaggen(){
         super("normal","rsc/Flaggen Leicht GIF/Deutschland.gif");
+
         String [] flaggenleicht = {"rsc/Flaggen Leicht GIF/Belgien.gif", "rsc/Flaggen Leicht GIF/Brasilien.gif", "rsc/Flaggen Leicht GIF/China.gif", "rsc/Flaggen Leicht GIF/Deutschland.gif","rsc/Flaggen Leicht GIF/England.gif", "rsc/Flaggen Leicht GIF/Finnland.gif",
                                     "rsc/Flaggen Leicht GIF/Frankreich.gif", "rsc/Flaggen Leicht GIF/Israel.gif", "rsc/Flaggen Leicht GIF/Italien.gif", "rsc/Flaggen Leicht GIF/Japan.gif", "rsc/Flaggen Leicht GIF/Kanada.gif", "rsc/Flaggen Leicht PNG/Kroatien.png",
                                     "rsc/Flaggen Leicht PNG/Mexiko.png", "rsc/Flaggen Leicht PNG/Niederlande.png", "rsc/Flaggen Leicht PNG/Norwegen.png", "rsc/Flaggen Leicht PNG/Polen.png", "rsc/Flaggen Leicht PNG/Portugal.png", "rsc/Flaggen Leicht PNG/Russland.png",
