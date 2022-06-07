@@ -5,9 +5,10 @@ public class TitleScreen {
     public Figur flaggenMittel;
     TitleScreen(){
         flaggenLeicht = new Figur ("button","rsc/Flaggen Leicht GIF/Belgien.gif");
-        flaggenLeicht.setzeMittelpunkt(0,-4.3);
+        flaggenLeicht.setzeMittelpunkt(0,0);
+
         flaggenMittel = new Figur ("button","rsc/Flaggen Mittel GIF/Afghanistan.gif");
-        flaggenMittel.setzeMittelpunkt(0,-4.3);
+        flaggenMittel.setzeMittelpunkt(0,-7.5);
     }
 
 
