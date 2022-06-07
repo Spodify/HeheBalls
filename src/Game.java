@@ -9,10 +9,17 @@ public class Game extends Spiel {
     String flaggenNamel;
     public Figur flaggemittel;
     String flaggenNameM;
-
     public Figur[] buttonL;
-
     public Figur[] buttonM;
+    String bl0;
+    String bl1;
+    String bl2;
+    String bl3;
+    String bm0;
+    String bm1;
+    String bm2;
+    String bm3;
+
 
     public  Game(int width, int height){
         super();
@@ -122,23 +129,54 @@ public class Game extends Spiel {
                 "rsc/Flaggen Mittel GIF/Suedafrika.gif", "rsc/Flaggen Mittel GIF/Zypern.gif"};
 
         Random rand2 = new Random();
+        Random loesung = new Random();
+        int loesungsButton =loesung.nextInt(4);
         int index2 = rand2.nextInt(flaggenmittel.length);
         flaggenNameM = (flaggenmittel[index2]);
 
         flaggemittel = new Figur("normal",flaggenNameM);
         flaggemittel.setzeMittelpunkt(0,7.5);
 
+        if (loesungsButton==0){
+            bm0 = flaggenNameM;
+        }
+        else {
+            int index3 = rand2.nextInt(flaggenmittel.length);
+            bm0 = (flaggenmittel[index3]);
+        }
+        if (loesungsButton==1){
+            bm1 = flaggenNameM;
+        }
+        else {
+            int index3 = rand2.nextInt(flaggenmittel.length);
+            bm1 = (flaggenmittel[index3]);
+        }
+        if (loesungsButton==2){
+            bm2 = flaggenNameM;
+        }
+        else {
+            int index3 = rand2.nextInt(flaggenmittel.length);
+            bm2 = (flaggenmittel[index3]);
+        }
+        if (loesungsButton==3){
+            bm3 = flaggenNameM;
+        }
+        else {
+            int index3 = rand2.nextInt(flaggenmittel.length);
+            bm3 = (flaggenmittel[index3]);
+        }
+
         buttonM = new Figur[4];
-        buttonM[0] = new Figur("button","rsc/Flaggen Mittel GIF/Afghanistan.gif");
+        buttonM[0] = new Figur("button",bm0);
         buttonM[0].setzeMittelpunkt(-3,-2.5);
 
-        buttonM[1] = new Figur("button","rsc/Flaggen Mittel GIF/Algerien.gif");
+        buttonM[1] = new Figur("button",bm1);
         buttonM[1].setzeMittelpunkt(7,-2.5);
 
-        buttonM[2] = new Figur("button","rsc/Flaggen Mittel GIF/Bangladesch.gif");
+        buttonM[2] = new Figur("button",bm2);
         buttonM[2].setzeMittelpunkt(7,-8);
 
-        buttonM[3] = new Figur("button","rsc/Flaggen Mittel GIF/Chile.gif");
+        buttonM[3] = new Figur("button",bm3);
         buttonM[3].setzeMittelpunkt(-3,-8);
 
         MausKlickReagierbar dieSendungMitDer;
