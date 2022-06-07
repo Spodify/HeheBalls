@@ -141,6 +141,31 @@ public class Game extends Spiel {
         buttonM[3] = new Figur("button","rsc/Flaggen Mittel GIF/Chile.gif");
         buttonM[3].setzeMittelpunkt(-3,-8);
 
+        MausKlickReagierbar dieSendungMitDer;
+
+        registriereMausKlickReagierbar(
+                dieSendungMitDer = new MausKlickReagierbar() {
+
+                    @Override
+                    public void klickReagieren(double x, double y) {
+                        if (buttonM[0].beinhaltetPunkt(x, y)) {
+                            System.out.println("1");
+                        }
+                        if (buttonM[1].beinhaltetPunkt(x, y)) {
+                            System.out.println("2");
+
+                        }
+                        if (buttonM[2].beinhaltetPunkt(x, y)) {
+                            System.out.println("3");
+                        }
+                        if (buttonM[3].beinhaltetPunkt(x, y)) {
+                            System.out.println("4");
+
+                        }
+                    }
+
+                });
+
     }
 
 
