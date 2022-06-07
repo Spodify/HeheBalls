@@ -85,8 +85,13 @@ public class Game extends Spiel {
 
         buttonL = new Figur[4];
         buttonL[0] = new Figur("button","rsc/Flaggen Leicht GIF/Belgien.gif");
-        buttonL[0].setzeMittelpunkt(0,-4.5);
+        buttonL[0].setzeMittelpunkt(-3,-4.5);
 
+        buttonL[1] = new Figur("button","rsc/Flaggen Leicht GIF/Brasilien.gif");
+        buttonL[1].setzeMittelpunkt(7,-4.5);
+
+        buttonL[2] = new Figur("button","rsc/Flaggen Leicht GIF/Brasilien.gif");
+        buttonL[2].setzeMittelpunkt(7,-7.5);
 
 
     }
