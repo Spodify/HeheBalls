@@ -85,13 +85,16 @@ public class Game extends Spiel {
 
         buttonL = new Figur[4];
         buttonL[0] = new Figur("button","rsc/Flaggen Leicht GIF/Belgien.gif");
-        buttonL[0].setzeMittelpunkt(-3,-4.5);
+        buttonL[0].setzeMittelpunkt(-3,-2.5);
 
         buttonL[1] = new Figur("button","rsc/Flaggen Leicht GIF/Brasilien.gif");
-        buttonL[1].setzeMittelpunkt(7,-4.5);
+        buttonL[1].setzeMittelpunkt(7,-2.5);
 
-        buttonL[2] = new Figur("button","rsc/Flaggen Leicht GIF/Brasilien.gif");
-        buttonL[2].setzeMittelpunkt(7,-7.5);
+        buttonL[2] = new Figur("button","rsc/Flaggen Leicht GIF/China.gif");
+        buttonL[2].setzeMittelpunkt(7,-8);
+
+        buttonL[3] = new Figur("button","rsc/Flaggen Leicht GIF/Deutschland.gif");
+        buttonL[3].setzeMittelpunkt(-3,-8);
 
 
     }
@@ -106,6 +109,20 @@ public class Game extends Spiel {
         flaggenNameM = (flaggenmittel[index2]);
 
         flaggemittel = new Figur("normal",flaggenNameM);
+        flaggemittel.setzeMittelpunkt(0,7.5);
+
+        buttonM = new Figur[4];
+        buttonM[0] = new Figur("button","rsc/Flaggen Mittel GIF/Afghanistan.gif");
+        buttonM[0].setzeMittelpunkt(-3,-2.5);
+
+        buttonM[1] = new Figur("button","rsc/Flaggen Mittel GIF/Algerien.gif");
+        buttonM[1].setzeMittelpunkt(7,-2.5);
+
+        buttonM[2] = new Figur("button","rsc/Flaggen Mittel GIF/Bangladesch.gif");
+        buttonM[2].setzeMittelpunkt(7,-8);
+
+        buttonM[3] = new Figur("button","rsc/Flaggen Mittel GIF/Chile.gif");
+        buttonM[3].setzeMittelpunkt(-3,-8);
 
     }
 
