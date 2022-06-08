@@ -186,6 +186,7 @@ public class Game extends Spiel {
 
                     @Override
                     public void klickReagieren(double x, double y) {
+                        //vlt Switch Case
                         if (buttonM[0].beinhaltetPunkt(x, y)) {
                             System.out.println("1");
                         }
