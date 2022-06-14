@@ -86,10 +86,10 @@ public class Game extends Spiel {
 
 
 
-        String [] flaggenleicht = {"Belgien", "Brasilien", "China", "Deutschland","England", "Finnland",
+        String [] flaggenleicht = {"Amerika", "Belgien", "Brasilien", "China", "Deutschland","England", "Finnland",
                 "Frankreich", "Israel", "Italien", "Japan", "Kanada", "Kroatien",
                 "Mexiko", "Niederlande", "Norwegen", "Polen", "Portugal", "Russland",
-                "Schweden", "Schweiz", "Spanien", "Suedkorea" ,"Ukraine"};
+                "Schweden", "Spanien", "Suedkorea"};
 
 
         Random rand = new Random();
@@ -174,10 +174,9 @@ public class Game extends Spiel {
 
     }
     public void  flaggenM(){
-        String [] flaggenmittel = {"Afghanistan", "Algerien", "Bangladesch", "Chile", "Estland", "Ghana",
-                "Irland", "Jamaika.gif", "Kolumbien", "Kuba", "Malta", "Nepal",
-                "Niger", "Nordmazedonien", "Philipinen", "Saudi Arabien", "Senegal", "Serbien",
-                "Suedafrika", "Zypern"};
+        String [] flaggenmittel = {"Afghanistan", "Ägypten", "Algerien", "Bulgarien", "Chile", "Estland", "Ghana",
+                "Irland", "Jamaika", "Kolumbien", "Kuba", "Niger", "Niger", "Nordmazedonien", "Philipinen", "Saudi Arabien", "Senegal", "Suedafrika",
+                "Thailand", "Zypern"};
 
         Random rand2 = new Random();
         Random loesung = new Random();
