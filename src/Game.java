@@ -76,23 +76,55 @@ public class Game extends Spiel {
 
 
         Random rand = new Random();
+        Random loesung2 = new Random();
+        int loesungsButton2 =loesung2.nextInt(4);
         int index = rand.nextInt(flaggenleicht.length);
         flaggenNamel = (flaggenleicht[index]);
 
         flaggeleicht = new Figur("normal",flaggenNamel);
         flaggeleicht.setzeMittelpunkt(0,7.5);
 
+
+
+        if (loesungsButton2==0){
+            bl0 = flaggenNamel;
+        }
+        else {
+            int index3 = rand.nextInt(flaggenleicht.length);
+            bl0 = (flaggenleicht[index3]);
+        }
+        if (loesungsButton2==1){
+            bl1 = flaggenNamel;
+        }
+        else {
+            int index3 = rand.nextInt(flaggenleicht.length);
+            bl1 = (flaggenleicht[index3]);
+        }
+        if (loesungsButton2==2){
+            bl2 = flaggenNamel;
+        }
+        else {
+            int index3 = rand.nextInt(flaggenleicht.length);
+            bl2 = (flaggenleicht[index3]);
+        }
+        if (loesungsButton2==3){
+            bl3 = flaggenNamel;
+        }
+        else {
+            int index3 = rand.nextInt(flaggenleicht.length);
+            bl3 = (flaggenleicht[index3]);
+        }
         buttonL = new Figur[4];
-        buttonL[0] = new Figur("button","rsc/Flaggen Leicht GIF/Belgien.gif");
+        buttonL[0] = new Figur("button",bl0);
         buttonL[0].setzeMittelpunkt(-3,-2.5);
 
-        buttonL[1] = new Figur("button","rsc/Flaggen Leicht GIF/Brasilien.gif");
+        buttonL[1] = new Figur("button",bl1);
         buttonL[1].setzeMittelpunkt(7,-2.5);
 
-        buttonL[2] = new Figur("button","rsc/Flaggen Leicht GIF/China.gif");
+        buttonL[2] = new Figur("button",bl2);
         buttonL[2].setzeMittelpunkt(7,-8);
 
-        buttonL[3] = new Figur("button","rsc/Flaggen Leicht GIF/Deutschland.gif");
+        buttonL[3] = new Figur("button",bl3);
         buttonL[3].setzeMittelpunkt(-3,-8);
 
         MausKlickReagierbar dieSendungMitDer;
@@ -117,6 +149,7 @@ public class Game extends Spiel {
 
                         }
                     }
+
 
                 });
 
