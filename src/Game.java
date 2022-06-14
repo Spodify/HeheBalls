@@ -15,6 +15,9 @@ public class Game extends Spiel {
     String flaggenNameM;
     public Figur[] buttonL;
     public Figur[] buttonM;
+
+    public TEXT[] nameFlaggeL;
+    public TEXT[] nameFlaggeM;
     String bl0;
     String bl1;
     String bl2;
@@ -131,6 +134,18 @@ public class Game extends Spiel {
             int index3 = rand.nextInt(flaggenleicht.length);
             bl3 = ("rsc/Flaggen Leicht GIF/"+flaggenleicht[index3]+".gif");
         }
+
+        nameFlaggeL = new  TEXT[4];
+        nameFlaggeL[0] = new TEXT(-3,-2.5,1,1);
+        nameFlaggeL[0].setzeInhalt(bl0);
+        nameFlaggeL[1] = new TEXT(-3,-2.5,1,1);
+        nameFlaggeL[1].setzeInhalt(bl1);
+        nameFlaggeL[2] = new TEXT(-3,-2.5,1,1);
+        nameFlaggeL[2].setzeInhalt(bl2);
+        nameFlaggeL[3] = new TEXT(-3,-2.5,1,1);
+        nameFlaggeL[3].setzeInhalt(bl3);
+
+
         buttonL = new Figur[4];
         buttonL[0] = new Figur("button",bl0);
         buttonL[0].setzeMittelpunkt(-3,-2.5);
