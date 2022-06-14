@@ -26,6 +26,8 @@ public class Game extends Spiel {
     String bm1;
     String bm2;
     String bm3;
+    String Master;
+
 
 
 
@@ -103,7 +105,7 @@ public class Game extends Spiel {
         //rsc/Flaggen Leicht GIF/Amerika.gif
         flaggeleicht = new Figur("normal",flaggenNamel);
         flaggeleicht.setzeMittelpunkt(0,7.5);
-
+        Master = "rsc/smileAnimation.gif";
 
 
         if (loesungsButton2==0){
@@ -147,16 +149,16 @@ public class Game extends Spiel {
 
 
         buttonL = new Figur[4];
-        buttonL[0] = new Figur("button",bl0);
+        buttonL[0] = new Figur("button",Master);
         buttonL[0].setzeMittelpunkt(-3,-2.5);
 
-        buttonL[1] = new Figur("button",bl1);
+        buttonL[1] = new Figur("button",Master);
         buttonL[1].setzeMittelpunkt(7,-2.5);
 
-        buttonL[2] = new Figur("button",bl2);
+        buttonL[2] = new Figur("button",Master);
         buttonL[2].setzeMittelpunkt(7,-8);
 
-        buttonL[3] = new Figur("button",bl3);
+        buttonL[3] = new Figur("button",Master);
         buttonL[3].setzeMittelpunkt(-3,-8);
 
 
@@ -231,16 +233,16 @@ public class Game extends Spiel {
         }
 
         buttonM = new Figur[4];
-        buttonM[0] = new Figur("button",bm0);
+        buttonM[0] = new Figur("button",Master);
         buttonM[0].setzeMittelpunkt(-3,-2.5);
 
-        buttonM[1] = new Figur("button",bm1);
+        buttonM[1] = new Figur("button",Master);
         buttonM[1].setzeMittelpunkt(7,-2.5);
 
-        buttonM[2] = new Figur("button",bm2);
+        buttonM[2] = new Figur("button",Master);
         buttonM[2].setzeMittelpunkt(7,-8);
 
-        buttonM[3] = new Figur("button",bm3);
+        buttonM[3] = new Figur("button",Master);
         buttonM[3].setzeMittelpunkt(-3,-8);
 
         MausKlickReagierbar dieSendungMitDer;
