@@ -70,7 +70,7 @@ public class TEXT
      *
      * @param   text    Der neue Text
      */
-    public void setzeInhalt( double zahl )
+    public void setzeInhalt( int zahl )
     {
         super.setzeInhalt( "" + zahl );
     }

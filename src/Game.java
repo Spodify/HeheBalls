@@ -176,6 +176,8 @@ public class Game extends Spiel {
         Punktzahl.setzeInhalt(punkte);
 
 
+
+
         MausKlickReagierbar dieSendungMitDer;
 
         registriereMausKlickReagierbar(
