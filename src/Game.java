@@ -101,11 +101,11 @@ public class Game extends Spiel {
         Random loesung2 = new Random();
         int loesungsButton2 =loesung2.nextInt(4);
         int index = rand.nextInt(flaggenleicht.length);
-        flaggenNamel = ("rsc/Flaggen Leicht GIF/"+flaggenleicht[index]+".gif");
+        flaggenNamel = (flaggenleicht[index]);
         //rsc/Flaggen Leicht GIF/Amerika.gif
-        flaggeleicht = new Figur("normal",flaggenNamel);
+        flaggeleicht = new Figur("normal","rsc/Flaggen Leicht GIF/"+flaggenNamel+".gif");
         flaggeleicht.setzeMittelpunkt(0,7.5);
-        Master = "rsc/smileAnimation.gif";
+        Master = "rsc/settings.gif";
 
 
         if (loesungsButton2==0){
@@ -113,42 +113,35 @@ public class Game extends Spiel {
         }
         else {
             int index3 = rand.nextInt(flaggenleicht.length);
-            bl0 = ("rsc/Flaggen Leicht GIF/"+flaggenleicht[index3]+".gif");
+            bl0 = (flaggenleicht[index3]);
         }
         if (loesungsButton2==1){
             bl1 = flaggenNamel;
         }
         else {
             int index3 = rand.nextInt(flaggenleicht.length);
-            bl1 = ("rsc/Flaggen Leicht GIF/"+flaggenleicht[index3]+".gif");
+            bl1 = (flaggenleicht[index3]);
         }
         if (loesungsButton2==2){
             bl2 = flaggenNamel;
         }
         else {
             int index3 = rand.nextInt(flaggenleicht.length);
-            bl2 = ("rsc/Flaggen Leicht GIF/"+flaggenleicht[index3]+".gif");
+            bl2 = (flaggenleicht[index3]);
         }
         if (loesungsButton2==3){
             bl3 = flaggenNamel;
         }
         else {
             int index3 = rand.nextInt(flaggenleicht.length);
-            bl3 = ("rsc/Flaggen Leicht GIF/"+flaggenleicht[index3]+".gif");
+            bl3 = (flaggenleicht[index3]);
         }
 
-        nameFlaggeL = new  TEXT[4];
-        nameFlaggeL[0] = new TEXT(-3,-2.5,1,1);
-        nameFlaggeL[0].setzeInhalt(bl0);
-        nameFlaggeL[1] = new TEXT(-3,-2.5,1,1);
-        nameFlaggeL[1].setzeInhalt(bl1);
-        nameFlaggeL[2] = new TEXT(-3,-2.5,1,1);
-        nameFlaggeL[2].setzeInhalt(bl2);
-        nameFlaggeL[3] = new TEXT(-3,-2.5,1,1);
-        nameFlaggeL[3].setzeInhalt(bl3);
+
 
 
         buttonL = new Figur[4];
+
         buttonL[0] = new Figur("button",Master);
         buttonL[0].setzeMittelpunkt(-3,-2.5);
 
@@ -160,6 +153,21 @@ public class Game extends Spiel {
 
         buttonL[3] = new Figur("button",Master);
         buttonL[3].setzeMittelpunkt(-3,-8);
+
+
+        nameFlaggeL = new  TEXT[4];
+
+        nameFlaggeL[0] = new TEXT(-3,-2.5,1,1);
+        nameFlaggeL[0].setzeInhalt(bl0);
+
+        nameFlaggeL[1] = new TEXT(-3,-2.5,1,1);
+        nameFlaggeL[1].setzeInhalt(bl1);
+
+        nameFlaggeL[2] = new TEXT(-3,-2.5,1,1);
+        nameFlaggeL[2].setzeInhalt(bl2);
+
+        nameFlaggeL[3] = new TEXT(-3,-2.5,1,1);
+        nameFlaggeL[3].setzeInhalt(bl3);
 
 
         MausKlickReagierbar dieSendungMitDer;
