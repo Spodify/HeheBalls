@@ -96,8 +96,8 @@ public class Game extends Spiel {
         Random loesung2 = new Random();
         int loesungsButton2 =loesung2.nextInt(4);
         int index = rand.nextInt(flaggenleicht.length);
-        flaggenNamel = (flaggenleicht[index]);
-
+        flaggenNamel = ("rsc/Flaggen Leicht GIF/"+flaggenleicht[index]+".gif");
+        //rsc/Flaggen Leicht GIF/Amerika.gif
         flaggeleicht = new Figur("normal",flaggenNamel);
         flaggeleicht.setzeMittelpunkt(0,7.5);
 
@@ -108,28 +108,28 @@ public class Game extends Spiel {
         }
         else {
             int index3 = rand.nextInt(flaggenleicht.length);
-            bl0 = (flaggenleicht[index3]);
+            bl0 = ("rsc/Flaggen Leicht GIF/"+flaggenleicht[index3]+".gif");
         }
         if (loesungsButton2==1){
             bl1 = flaggenNamel;
         }
         else {
             int index3 = rand.nextInt(flaggenleicht.length);
-            bl1 = (flaggenleicht[index3]);
+            bl1 = ("rsc/Flaggen Leicht GIF/"+flaggenleicht[index3]+".gif");
         }
         if (loesungsButton2==2){
             bl2 = flaggenNamel;
         }
         else {
             int index3 = rand.nextInt(flaggenleicht.length);
-            bl2 = (flaggenleicht[index3]);
+            bl2 = ("rsc/Flaggen Leicht GIF/"+flaggenleicht[index3]+".gif");
         }
         if (loesungsButton2==3){
             bl3 = flaggenNamel;
         }
         else {
             int index3 = rand.nextInt(flaggenleicht.length);
-            bl3 = (flaggenleicht[index3]);
+            bl3 = ("rsc/Flaggen Leicht GIF/"+flaggenleicht[index3]+".gif");
         }
         buttonL = new Figur[4];
         buttonL[0] = new Figur("button",bl0);
