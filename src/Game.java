@@ -172,6 +172,9 @@ public class Game extends Spiel {
         nameFlaggeL[3] = new TEXT(7,-8,1,1);
         nameFlaggeL[3].setzeInhalt(bl3);
 
+        Punktzahl = new TEXT(2,2,1,1);
+        Punktzahl.setzeInhalt(punkte);
+
 
         MausKlickReagierbar dieSendungMitDer;
 
