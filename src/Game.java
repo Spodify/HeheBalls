@@ -1,8 +1,12 @@
+import ea.actor.Text;
 import ea.edu.Figur;
 import ea.edu.Spiel;
 import ea.edu.event.MausKlickReagierbar;
+import ea.internal.io.FontLoader;
 
+import java.awt.*;
 import java.util.Random;
+
 
 public class Game extends Spiel {
     public Figur flaggeleicht;
@@ -21,14 +25,26 @@ public class Game extends Spiel {
     String bm3;
 
 
+
     public  Game(int width, int height){
         super();
         setzeFensterGroesse(width, height);
         titleScreen();
 
+        //Text titel = new Text("Flaggenquiz", 4.5f);
+        //titel.setContent("Balls");
+        //titel.setOpacity(100);
+        //titel.setColor(Color.white);
+        //titel.setCenter(0,0);
+        //add(titel);
+
+
 
 
     }
+    //public void Spielname(float height, int fontstyle, String content){
+        //Text name = new Text();}
+
 
     void titleScreen() {
         //benennt die aktive szene und ruft den titleScreen auf
@@ -67,6 +83,7 @@ public class Game extends Spiel {
         flaggenM();
     }
     public  void flaggenl(){
+
 
 
         String [] flaggenleicht = {"rsc/Flaggen Leicht GIF/Belgien.gif", "rsc/Flaggen Leicht GIF/Brasilien.gif", "rsc/Flaggen Leicht GIF/China.gif", "rsc/Flaggen Leicht GIF/Deutschland.gif","rsc/Flaggen Leicht GIF/England.gif", "rsc/Flaggen Leicht GIF/Finnland.gif",
@@ -127,6 +144,7 @@ public class Game extends Spiel {
         buttonL[3] = new Figur("button",bl3);
         buttonL[3].setzeMittelpunkt(-3,-8);
 
+
         MausKlickReagierbar dieSendungMitDer;
 
         registriereMausKlickReagierbar(
@@ -156,10 +174,10 @@ public class Game extends Spiel {
 
     }
     public void  flaggenM(){
-        String [] flaggenmittel = {"rsc/Flaggen Mittel GIF/Afghanistan.gif", "rsc/Flaggen Mittel GIF/Algerien.gif", "rsc/Flaggen Mittel GIF/Bangladesch.gif", "rsc/Flaggen Mittel GIF/Chile.gif", "rsc/Flaggen Mittel GIF/Estland.gif", "rsc/Flaggen Mittel GIF/Ghana.gif",
-                "rsc/Flaggen Mittel GIF/Irland.gif", "rsc/Flaggen Mittel GIF/Jamaika.gif", "rsc/Flaggen Mittel GIF/Kolumbien.gif", "rsc/Flaggen Mittel GIF/Kuba.gif", "rsc/Flaggen Mittel GIF/Malta.gif", "rsc/Flaggen Mittel GIF/Nepal.gif",
-                "rsc/Flaggen Mittel GIF/Niger.gif", "rsc/Flaggen Mittel GIF/Nordmazedonien.gif", "rsc/Flaggen Mittel GIF/Philipinen.gif", "rsc/Flaggen Mittel GIF/Saudi Arabien.gif", "rsc/Flaggen Mittel GIF/Senegal.gif", "rsc/Flaggen Mittel GIF/Serbien.gif",
-                "rsc/Flaggen Mittel GIF/Suedafrika.gif", "rsc/Flaggen Mittel GIF/Zypern.gif"};
+        String [] flaggenmittel = {"Afghanistan", "Algerien", "Bangladesch", "Chile", "Estland", "Ghana",
+                "Irland", "Jamaika.gif", "Kolumbien", "Kuba", "Malta", "Nepal",
+                "Niger", "Nordmazedonien", "Philipinen", "Saudi Arabien", "Senegal", "Serbien",
+                "Suedafrika", "Zypern"};
 
         Random rand2 = new Random();
         Random loesung = new Random();
