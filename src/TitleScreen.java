@@ -7,11 +7,11 @@ public class TitleScreen {
     public Figur flaggenLeicht;
     public Figur flaggenMittel;
     TitleScreen(){
-        flaggenLeicht = new Figur ("button","rsc/Flaggen Leicht GIF/Belgien.gif");
+        flaggenLeicht = new Figur ("button","rsc/LeichtButton.gif");
         flaggenLeicht.setzeMittelpunkt(0,0);
 
 
-        flaggenMittel = new Figur ("button","rsc/Flaggen Mittel GIF/Afghanistan.gif");
+        flaggenMittel = new Figur ("button","rsc/MittelButton.gif");
         flaggenMittel.setzeMittelpunkt(0,-7.5);
     }
 

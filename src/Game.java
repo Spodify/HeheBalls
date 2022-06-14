@@ -1,10 +1,6 @@
-import ea.actor.Text;
 import ea.edu.Figur;
 import ea.edu.Spiel;
 import ea.edu.event.MausKlickReagierbar;
-import ea.internal.io.FontLoader;
-
-import java.awt.*;
 import java.util.Random;
 
 
@@ -27,10 +23,10 @@ public class Game extends Spiel {
     String bm2;
     String bm3;
     String Master;
+    int punkte;
 
     public TEXT Punktzahl;
 
-    String AnzahlPunkte;
 
 
 
@@ -82,13 +78,12 @@ public class Game extends Spiel {
 
 
     public void leicht(){
+        setzeAktiveSzene("title");
         erzeugeNeueSzene();
-        benenneAktiveSzene("leicht");
         flaggenl();
     }
     public void mittel(){
         erzeugeNeueSzene();
-        benenneAktiveSzene("mittel");
         flaggenM();
     }
     public  void flaggenl(){
@@ -109,7 +104,7 @@ public class Game extends Spiel {
         //rsc/Flaggen Leicht GIF/Amerika.gif
         flaggeleicht = new Figur("normal","rsc/Flaggen Leicht GIF/"+flaggenNamel+".gif");
         flaggeleicht.setzeMittelpunkt(0,7.5);
-        Master = "rsc/linustips.gif";
+        Master = "rsc/Button.gif";
 
 
         if (loesungsButton2==0){
@@ -149,14 +144,18 @@ public class Game extends Spiel {
         buttonL[0] = new Figur("button",Master);
         buttonL[0].setzeMittelpunkt(-3,-2.5);
 
+
         buttonL[1] = new Figur("button",Master);
         buttonL[1].setzeMittelpunkt(7,-2.5);
+
 
         buttonL[2] = new Figur("button",Master);
         buttonL[2].setzeMittelpunkt(-3,-8);
 
+
         buttonL[3] = new Figur("button",Master);
         buttonL[3].setzeMittelpunkt(7,-8);
+
 
 
         nameFlaggeL = new  TEXT[4];
@@ -183,15 +182,23 @@ public class Game extends Spiel {
                     public void klickReagieren(double x, double y) {
                         if (buttonL[0].beinhaltetPunkt(x, y)&&loesungsButton2==0) {
                             System.out.println("1");
+                            leicht();
+                            punkte();
                         }
                         if (buttonL[1].beinhaltetPunkt(x, y)&&loesungsButton2==1) {
                             System.out.println("2");
+                            leicht();
+                            punkte();
                         }
                         if (buttonL[2].beinhaltetPunkt(x, y)&&loesungsButton2==2) {
                             System.out.println("3");
+                            leicht();
+                            punkte();
                         }
                         if (buttonL[3].beinhaltetPunkt(x, y)&&loesungsButton2==3) {
                             System.out.println("4");
+                            leicht();
+                            punkte();
 
                         }
                     }
@@ -215,7 +222,7 @@ public class Game extends Spiel {
 
         flaggemittel = new Figur("normal","rsc/Flaggen Mittel GIF/"+flaggenNameM+".gif");
         flaggemittel.setzeMittelpunkt(0,7.5);
-        Master = "rsc/linustips.gif";
+        Master = "rsc/Button.gif";
 
         if (loesungsButton==0){
             bm0 = flaggenNameM;
@@ -276,7 +283,7 @@ public class Game extends Spiel {
 
 
         Punktzahl = new TEXT(2,2,1,1);
-        Punktzahl.setzeInhalt();
+        Punktzahl.setzeInhalt(punkte);
 
 
         MausKlickReagierbar dieSendungMitDer;
@@ -289,20 +296,34 @@ public class Game extends Spiel {
                         //vlt Switch Case
                         if (buttonM[0].beinhaltetPunkt(x, y)&&loesungsButton==0) {
                             System.out.println("1");
+                            mittel();
+                            punkte();
                         }
                         if (buttonM[1].beinhaltetPunkt(x, y)&&loesungsButton==1) {
                             System.out.println("2");
+                            mittel();
+                            punkte();
                         }
                         if (buttonM[2].beinhaltetPunkt(x, y)&&loesungsButton==2) {
                             System.out.println("3");
+                            mittel();
+                            punkte();
                         }
                         if (buttonM[3].beinhaltetPunkt(x, y)&&loesungsButton==3) {
                             System.out.println("4");
+                            mittel();
+                            punkte();
 
                         }
                     }
 
                 });
+
+    }
+    public void punkte(){
+        punkte=punkte+10;
+
+        System.out.println("punkte:"+punkte+".");
 
     }
 
