@@ -28,6 +28,10 @@ public class Game extends Spiel {
     String bm3;
     String Master;
 
+    public TEXT Punktzahl;
+
+    String AnzahlPunkte;
+
 
 
 
@@ -269,6 +273,11 @@ public class Game extends Spiel {
 
         nameFlaggeM[3] = new TEXT(7,-8,1,1);
         nameFlaggeM[3].setzeInhalt(bm3);
+
+
+        Punktzahl = new TEXT(2,2,1,1);
+        Punktzahl.setzeInhalt();
+
 
         MausKlickReagierbar dieSendungMitDer;
 
