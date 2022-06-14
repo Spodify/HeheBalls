@@ -162,15 +162,19 @@ public class Game extends Spiel {
 
         nameFlaggeL[0] = new TEXT(-3,-2.5,1,1);
         nameFlaggeL[0].setzeInhalt(bl0);
+        nameFlaggeL[0].setzeMittelpunkt(-3,-2.5);
 
         nameFlaggeL[1] = new TEXT(7,-2.5,1,1);
         nameFlaggeL[1].setzeInhalt(bl1);
+        nameFlaggeL[1].setzeMittelpunkt(7,-2.5);
 
         nameFlaggeL[2] = new TEXT(-3,-8,1,1);
         nameFlaggeL[2].setzeInhalt(bl2);
+        nameFlaggeL[2].setzeMittelpunkt(-3,-8);
 
         nameFlaggeL[3] = new TEXT(7,-8,1,1);
         nameFlaggeL[3].setzeInhalt(bl3);
+        nameFlaggeL[3].setzeMittelpunkt(7,-8);
 
         Punktzahl = new TEXT(2,2,1,1);
         Punktzahl.setzeInhalt(punkte);
@@ -187,23 +191,27 @@ public class Game extends Spiel {
                     public void klickReagieren(double x, double y) {
                         if (buttonL[0].beinhaltetPunkt(x, y)&&loesungsButton2==0) {
                             System.out.println("1");
-                            leicht();
                             punkte();
+                            leicht();
+
                         }
                         if (buttonL[1].beinhaltetPunkt(x, y)&&loesungsButton2==1) {
                             System.out.println("2");
-                            leicht();
                             punkte();
+                            leicht();
+
                         }
                         if (buttonL[2].beinhaltetPunkt(x, y)&&loesungsButton2==2) {
                             System.out.println("3");
-                            leicht();
                             punkte();
+                            leicht();
+
                         }
                         if (buttonL[3].beinhaltetPunkt(x, y)&&loesungsButton2==3) {
                             System.out.println("4");
-                            leicht();
                             punkte();
+                            leicht();
+
 
                         }
                     }
@@ -276,15 +284,19 @@ public class Game extends Spiel {
 
         nameFlaggeM[0] = new TEXT(-3,-2.5,1,1);
         nameFlaggeM[0].setzeInhalt(bm0);
+        nameFlaggeM[0].setzeMittelpunkt(-3,-2.5);
 
         nameFlaggeM[1] = new TEXT(7,-2.5,1,1);
         nameFlaggeM[1].setzeInhalt(bm1);
+        nameFlaggeM[1].setzeMittelpunkt(7,-2.5);
 
         nameFlaggeM[2] = new TEXT(-3,-8,1,1);
         nameFlaggeM[2].setzeInhalt(bm2);
+        nameFlaggeM[2].setzeMittelpunkt(-3,-8);
 
         nameFlaggeM[3] = new TEXT(7,-8,1,1);
         nameFlaggeM[3].setzeInhalt(bm3);
+        nameFlaggeM[3].setzeMittelpunkt(7,-8);
 
 
         Punktzahl = new TEXT(2,2,1,1);
@@ -301,23 +313,27 @@ public class Game extends Spiel {
                         //vlt Switch Case
                         if (buttonM[0].beinhaltetPunkt(x, y)&&loesungsButton==0) {
                             System.out.println("1");
-                            mittel();
                             punkte();
+                            mittel();
+
                         }
                         if (buttonM[1].beinhaltetPunkt(x, y)&&loesungsButton==1) {
                             System.out.println("2");
-                            mittel();
                             punkte();
+                            mittel();
+
                         }
                         if (buttonM[2].beinhaltetPunkt(x, y)&&loesungsButton==2) {
                             System.out.println("3");
-                            mittel();
                             punkte();
+                            mittel();
+
                         }
                         if (buttonM[3].beinhaltetPunkt(x, y)&&loesungsButton==3) {
                             System.out.println("4");
-                            mittel();
                             punkte();
+                            mittel();
+
 
                         }
                     }
