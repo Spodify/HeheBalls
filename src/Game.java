@@ -160,13 +160,13 @@ public class Game extends Spiel {
         nameFlaggeL[0] = new TEXT(-3,-2.5,1,1);
         nameFlaggeL[0].setzeInhalt(bl0);
 
-        nameFlaggeL[1] = new TEXT(-3,-2.5,1,1);
+        nameFlaggeL[1] = new TEXT(7,-2.5,1,1);
         nameFlaggeL[1].setzeInhalt(bl1);
 
-        nameFlaggeL[2] = new TEXT(-3,-2.5,1,1);
+        nameFlaggeL[2] = new TEXT(-3,-8,1,1);
         nameFlaggeL[2].setzeInhalt(bl2);
 
-        nameFlaggeL[3] = new TEXT(-3,-2.5,1,1);
+        nameFlaggeL[3] = new TEXT(7,-8,1,1);
         nameFlaggeL[3].setzeInhalt(bl3);
 
 
@@ -184,10 +184,10 @@ public class Game extends Spiel {
                             System.out.println("2");
                         }
                         if (buttonL[2].beinhaltetPunkt(x, y)) {
-                            System.out.println("3");
+                            System.out.println("4");
                         }
                         if (buttonL[3].beinhaltetPunkt(x, y)) {
-                            System.out.println("4");
+                            System.out.println("3");
 
                         }
                     }
@@ -206,41 +206,43 @@ public class Game extends Spiel {
         Random loesung = new Random();
         int loesungsButton =loesung.nextInt(4);
         int index2 = rand2.nextInt(flaggenmittel.length);
-        flaggenNameM = ("rsc/Flaggen Mittel GIF/"+flaggenmittel[index2]+".gif");
+        flaggenNameM = (flaggenmittel[index2]);
 
-        flaggemittel = new Figur("normal",flaggenNameM);
+        flaggemittel = new Figur("normal","rsc/Flaggen Mittel GIF/"+flaggenNameM+".gif");
         flaggemittel.setzeMittelpunkt(0,7.5);
+        Master = "rsc/settings.gif";
 
         if (loesungsButton==0){
             bm0 = flaggenNameM;
         }
         else {
             int index3 = rand2.nextInt(flaggenmittel.length);
-            bm0 = ("rsc/Flaggen Mittel GIF/"+flaggenmittel[index3]+".gif");
+            bm0 = (flaggenmittel[index3]);
         }
         if (loesungsButton==1){
             bm1 = flaggenNameM;
         }
         else {
             int index3 = rand2.nextInt(flaggenmittel.length);
-            bm1 = ("rsc/Flaggen Mittel GIF/"+flaggenmittel[index3]+".gif");
+            bm1 = (flaggenmittel[index3]);
         }
         if (loesungsButton==2){
             bm2 = flaggenNameM;
         }
         else {
             int index3 = rand2.nextInt(flaggenmittel.length);
-            bm2 = ("rsc/Flaggen Mittel GIF/"+flaggenmittel[index3]+".gif");
+            bm2 = (flaggenmittel[index3]);
         }
         if (loesungsButton==3){
             bm3 = flaggenNameM;
         }
         else {
             int index3 = rand2.nextInt(flaggenmittel.length);
-            bm3 = ("rsc/Flaggen Mittel GIF/"+flaggenmittel[index3]+".gif");
+            bm3 = (flaggenmittel[index3]);
         }
 
         buttonM = new Figur[4];
+
         buttonM[0] = new Figur("button",Master);
         buttonM[0].setzeMittelpunkt(-3,-2.5);
 
@@ -252,6 +254,20 @@ public class Game extends Spiel {
 
         buttonM[3] = new Figur("button",Master);
         buttonM[3].setzeMittelpunkt(-3,-8);
+
+        nameFlaggeM = new  TEXT[4];
+
+        nameFlaggeM[0] = new TEXT(-3,-2.5,1,1);
+        nameFlaggeM[0].setzeInhalt(bm0);
+
+        nameFlaggeM[1] = new TEXT(7,-2.5,1,1);
+        nameFlaggeM[1].setzeInhalt(bm1);
+
+        nameFlaggeM[2] = new TEXT(-3,-8,1,1);
+        nameFlaggeM[2].setzeInhalt(bm2);
+
+        nameFlaggeM[3] = new TEXT(7,-8,1,1);
+        nameFlaggeM[3].setzeInhalt(bm3);
 
         MausKlickReagierbar dieSendungMitDer;
 
@@ -268,10 +284,10 @@ public class Game extends Spiel {
                             System.out.println("2");
                         }
                         if (buttonM[2].beinhaltetPunkt(x, y)) {
-                            System.out.println("3");
+                            System.out.println("4");
                         }
                         if (buttonM[3].beinhaltetPunkt(x, y)) {
-                            System.out.println("4");
+                            System.out.println("3");
 
                         }
                     }
