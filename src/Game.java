@@ -1,13 +1,15 @@
 import ea.edu.Figur;
 import ea.edu.Spiel;
 import ea.edu.event.MausKlickReagierbar;
+import ea.edu.event.TastenReagierbar;
 
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 
-public class Game extends Spiel {
+public class Game extends Spiel implements TastenReagierbar {
     public Figur flaggeleicht;
     String flaggenNamel;
     public Figur flaggemittel;
@@ -45,7 +47,9 @@ public class Game extends Spiel {
 
 
 
+
     }
+
 
 
 
@@ -79,10 +83,32 @@ public class Game extends Spiel {
         setzeAktiveSzene("title");
         erzeugeNeueSzene();
         flaggenl();
+        TastenReagierbar cherryMxBrown;
+        registriereTastenReagierbar(
+                cherryMxBrown = new TastenReagierbar() {
+                    @Override
+                    public void tasteReagieren(int key) {
+                        if (key == KeyEvent.VK_M) {
+                            setzeAktiveSzene("title");
+                        }
+                    }
+                }
+        );
     }
     public void mittel(){
         erzeugeNeueSzene();
         flaggenM();
+        TastenReagierbar cherryMxBrown;
+        registriereTastenReagierbar(
+                cherryMxBrown = new TastenReagierbar() {
+                    @Override
+                    public void tasteReagieren(int key) {
+                        if (key == KeyEvent.VK_M) {
+                            setzeAktiveSzene("title");
+                        }
+                    }
+                }
+        );
     }
     public  void flaggenl(){
 
@@ -234,6 +260,7 @@ public class Game extends Spiel {
 
     }
     public void  flaggenM(){
+
         String [] flaggenmittel = {"Afghanistan", "Ägypten", "Algerien", "Bulgarien", "Chile", "Estland", "Ghana",
                 "Irland", "Jamaika", "Kolumbien", "Kuba", "Niger", "Niger", "Nordmazedonien", "Philipinen", "Saudi Arabien", "Senegal", "Suedafrika",
                 "Thailand", "Zypern"};
@@ -364,5 +391,12 @@ public class Game extends Spiel {
     }
 
 
+    @Override
+    public void tasteReagieren(int tastenCode) {
+        if(tastenCode==KeyEvent.VK_M){
 
+            System.out.println("d");
+        }
+
+    }
 }
