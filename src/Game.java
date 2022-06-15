@@ -1,6 +1,9 @@
 import ea.edu.Figur;
 import ea.edu.Spiel;
 import ea.edu.event.MausKlickReagierbar;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 
@@ -24,6 +27,7 @@ public class Game extends Spiel {
     String bm3;
     String Master;
     int punkte;
+    List<String> usedFlags = new ArrayList<>();
 
     public TEXT Punktzahl;
 
@@ -36,19 +40,13 @@ public class Game extends Spiel {
         setzeFensterGroesse(width, height);
         titleScreen();
 
-        //Text titel = new Text("Flaggenquiz", 4.5f);
-        //titel.setContent("Balls");
-        //titel.setOpacity(100);
-        //titel.setColor(Color.white);
-        //titel.setCenter(0,0);
-        //add(titel);
+
 
 
 
 
     }
-    //public void Spielname(float height, int fontstyle, String content){
-        //Text name = new Text();}
+
 
 
     void titleScreen() {
@@ -96,15 +94,29 @@ public class Game extends Spiel {
                 "Schweden", "Spanien", "Suedkorea"};
 
 
+
+        if(usedFlags.size()>=flaggenleicht.length*3/4){
+            usedFlags.clear();
+        }
+
+
         Random rand = new Random();
         Random loesung2 = new Random();
         int loesungsButton2 =loesung2.nextInt(4);
+
+        while(flaggenNamel!=null && usedFlags.contains(flaggenNamel)) {
+            int index = rand.nextInt(flaggenleicht.length);
+            flaggenNamel = (flaggenleicht[index]);
+        }
+        usedFlags.add(flaggenNamel);
+
         int index = rand.nextInt(flaggenleicht.length);
         flaggenNamel = (flaggenleicht[index]);
         //rsc/Flaggen Leicht GIF/Amerika.gif
         flaggeleicht = new Figur("normal","rsc/Flaggen Leicht GIF/"+flaggenNamel+".gif");
         flaggeleicht.setzeMittelpunkt(0,7.5);
         Master = "rsc/Button.gif";
+
 
 
         if (loesungsButton2==0){
@@ -226,6 +238,7 @@ public class Game extends Spiel {
                 "Irland", "Jamaika", "Kolumbien", "Kuba", "Niger", "Niger", "Nordmazedonien", "Philipinen", "Saudi Arabien", "Senegal", "Suedafrika",
                 "Thailand", "Zypern"};
 
+
         Random rand2 = new Random();
         Random loesung = new Random();
         int loesungsButton =loesung.nextInt(4);
@@ -342,6 +355,8 @@ public class Game extends Spiel {
 
     }
     public void punkte(){
+
+
         punkte=punkte+10;
 
         System.out.println("punkte:"+punkte+".");
