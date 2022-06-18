@@ -28,6 +28,7 @@ public class Game extends Spiel implements TastenReagierbar {
     String bm2;
     String bm3;
     String Master;
+    String uebergang;
     int punkte;
     List<String> usedFlags = new ArrayList<>();
 
@@ -89,7 +90,9 @@ public class Game extends Spiel implements TastenReagierbar {
                     @Override
                     public void tasteReagieren(int key) {
                         if (key == KeyEvent.VK_M) {
+                            usedFlags.clear();
                             setzeAktiveSzene("title");
+
                         }
                     }
                 }
@@ -104,6 +107,7 @@ public class Game extends Spiel implements TastenReagierbar {
                     @Override
                     public void tasteReagieren(int key) {
                         if (key == KeyEvent.VK_M) {
+                            usedFlags.clear();
                             setzeAktiveSzene("title");
                         }
                     }
@@ -122,7 +126,9 @@ public class Game extends Spiel implements TastenReagierbar {
 
 
         if(usedFlags.size()>=flaggenleicht.length*3/4){
+            uebergang = usedFlags.get(usedFlags.size()-1);
             usedFlags.clear();
+            usedFlags.add(uebergang);
         }
 
 
@@ -280,7 +286,9 @@ public class Game extends Spiel implements TastenReagierbar {
                 "Irland", "Jamaika", "Kolumbien", "Kuba", "Niger", "Niger", "Nordmazedonien", "Philipinen", "Saudi Arabien", "Senegal", "Suedafrika",
                 "Thailand", "Zypern"};
         if(usedFlags.size()>=flaggenmittel.length*3/4){
+            uebergang = usedFlags.get(usedFlags.size()-1);
             usedFlags.clear();
+            usedFlags.add(uebergang);
         }
 
 
