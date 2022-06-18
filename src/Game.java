@@ -134,10 +134,12 @@ public class Game extends Spiel implements TastenReagierbar {
             int index = rand.nextInt(flaggenleicht.length);
             flaggenNamel = (flaggenleicht[index]);
         }
-        usedFlags.add(flaggenNamel);
 
-        int index = rand.nextInt(flaggenleicht.length);
-        flaggenNamel = (flaggenleicht[index]);
+        if(flaggenNamel==null) {
+            int index = rand.nextInt(flaggenleicht.length);
+            flaggenNamel = (flaggenleicht[index]);
+        }
+        usedFlags.add(flaggenNamel);
         //rsc/Flaggen Leicht GIF/Amerika.gif
         flaggeleicht = new Figur("normal","rsc/Flaggen Leicht GIF/"+flaggenNamel+".gif");
         flaggeleicht.setzeMittelpunkt(0,7.5);
@@ -150,28 +152,45 @@ public class Game extends Spiel implements TastenReagierbar {
         }
         else {
             int index3 = rand.nextInt(flaggenleicht.length);
-            bl0 = (flaggenleicht[index3]);
+            if (flaggenleicht[index3].equals(flaggenNamel)){
+                int index4 = rand.nextInt(flaggenleicht.length);
+                bl0 = (flaggenleicht[index4]);
+            }
+            else {bl0 = (flaggenleicht[index3]);}
+
         }
         if (loesungsButton2==1){
             bl1 = flaggenNamel;
         }
         else {
             int index3 = rand.nextInt(flaggenleicht.length);
-            bl1 = (flaggenleicht[index3]);
+            if (flaggenleicht[index3].equals(flaggenNamel) || flaggenleicht[index3].equals(bl0)){
+                int index4 = rand.nextInt(flaggenleicht.length);
+                bl1 = (flaggenleicht[index4]);
+            }
+            else {bl1 = (flaggenleicht[index3]);}
         }
         if (loesungsButton2==2){
             bl2 = flaggenNamel;
         }
         else {
             int index3 = rand.nextInt(flaggenleicht.length);
-            bl2 = (flaggenleicht[index3]);
+            if (flaggenleicht[index3].equals(flaggenNamel) || flaggenleicht[index3].equals(bl0) || flaggenleicht[index3].equals(bl1)){
+                int index4 = rand.nextInt(flaggenleicht.length);
+                bl2 = (flaggenleicht[index4]);
+            }
+            else {bl2 = (flaggenleicht[index3]);}
         }
         if (loesungsButton2==3){
             bl3 = flaggenNamel;
         }
         else {
             int index3 = rand.nextInt(flaggenleicht.length);
-            bl3 = (flaggenleicht[index3]);
+            if (flaggenleicht[index3].equals(flaggenNamel) || flaggenleicht[index3].equals(bl0) || flaggenleicht[index3].equals(bl1) || flaggenleicht[index3].equals(bl2)){
+                int index4 = rand.nextInt(flaggenleicht.length);
+                bl3 = (flaggenleicht[index4]);
+            }
+            else {bl3 = (flaggenleicht[index3]);}
         }
 
 
@@ -228,25 +247,21 @@ public class Game extends Spiel implements TastenReagierbar {
                     @Override
                     public void klickReagieren(double x, double y) {
                         if (buttonL[0].beinhaltetPunkt(x, y)&&loesungsButton2==0) {
-                            System.out.println("1");
                             punkte();
                             leicht();
 
                         }
                         if (buttonL[1].beinhaltetPunkt(x, y)&&loesungsButton2==1) {
-                            System.out.println("2");
                             punkte();
                             leicht();
 
                         }
                         if (buttonL[2].beinhaltetPunkt(x, y)&&loesungsButton2==2) {
-                            System.out.println("3");
                             punkte();
                             leicht();
 
                         }
                         if (buttonL[3].beinhaltetPunkt(x, y)&&loesungsButton2==3) {
-                            System.out.println("4");
                             punkte();
                             leicht();
 
@@ -264,15 +279,26 @@ public class Game extends Spiel implements TastenReagierbar {
         String [] flaggenmittel = {"Afghanistan", "Ägypten", "Algerien", "Bulgarien", "Chile", "Estland", "Ghana",
                 "Irland", "Jamaika", "Kolumbien", "Kuba", "Niger", "Niger", "Nordmazedonien", "Philipinen", "Saudi Arabien", "Senegal", "Suedafrika",
                 "Thailand", "Zypern"};
+        if(usedFlags.size()>=flaggenmittel.length*3/4){
+            usedFlags.clear();
+        }
+
 
 
         Random rand2 = new Random();
         Random loesung = new Random();
         int loesungsButton =loesung.nextInt(4);
-        int index2 = rand2.nextInt(flaggenmittel.length);
-        flaggenNameM = (flaggenmittel[index2]);
-        System.out.println(loesungsButton);
 
+        while(flaggenNameM!=null && usedFlags.contains(flaggenNameM)) {
+            int index = rand2.nextInt(flaggenmittel.length);
+            flaggenNameM = (flaggenmittel[index]);
+        }
+
+        if (flaggenNameM==null) {
+            int index = rand2.nextInt(flaggenmittel.length);
+            flaggenNameM = (flaggenmittel[index]);
+        }
+        usedFlags.add(flaggenNameM);
         flaggemittel = new Figur("normal","rsc/Flaggen Mittel GIF/"+flaggenNameM+".gif");
         flaggemittel.setzeMittelpunkt(0,7.5);
         Master = "rsc/Button.gif";
@@ -282,28 +308,44 @@ public class Game extends Spiel implements TastenReagierbar {
         }
         else {
             int index3 = rand2.nextInt(flaggenmittel.length);
-            bm0 = (flaggenmittel[index3]);
+            if (flaggenmittel[index3].equals(flaggenNameM)){
+                int index4 = rand2.nextInt(flaggenmittel.length);
+                bm0 = (flaggenmittel[index4]);
+            }
+            else {bm0 = (flaggenmittel[index3]);}
         }
         if (loesungsButton==1){
             bm1 = flaggenNameM;
         }
         else {
             int index3 = rand2.nextInt(flaggenmittel.length);
-            bm1 = (flaggenmittel[index3]);
+            if (flaggenmittel[index3].equals(flaggenNameM) || flaggenmittel[index3].equals(bm0)){
+                int index4 = rand2.nextInt(flaggenmittel.length);
+                bm1 = (flaggenmittel[index4]);
+            }
+            else {bm1 = (flaggenmittel[index3]);}
         }
         if (loesungsButton==2){
             bm2 = flaggenNameM;
         }
         else {
             int index3 = rand2.nextInt(flaggenmittel.length);
-            bm2 = (flaggenmittel[index3]);
+            if (flaggenmittel[index3].equals(flaggenNameM) || flaggenmittel[index3].equals(bm0) || flaggenmittel[index3].equals(bm1)){
+                int index4 = rand2.nextInt(flaggenmittel.length);
+                bm2 = (flaggenmittel[index4]);
+            }
+            else {bm2 = (flaggenmittel[index3]);}
         }
         if (loesungsButton==3){
             bm3 = flaggenNameM;
         }
         else {
             int index3 = rand2.nextInt(flaggenmittel.length);
-            bm3 = (flaggenmittel[index3]);
+            if (flaggenmittel[index3].equals(flaggenNameM) || flaggenmittel[index3].equals(bm0) || flaggenmittel[index3].equals(bm1) || flaggenmittel[index3].equals(bm2)){
+                int index4 = rand2.nextInt(flaggenmittel.length);
+                bm3 = (flaggenmittel[index4]);
+            }
+            else {bm3 = (flaggenmittel[index3]);}
         }
 
         buttonM = new Figur[4];
@@ -352,25 +394,21 @@ public class Game extends Spiel implements TastenReagierbar {
                     public void klickReagieren(double x, double y) {
                         //vlt Switch Case
                         if (buttonM[0].beinhaltetPunkt(x, y)&&loesungsButton==0) {
-                            System.out.println("1");
                             punkte();
                             mittel();
 
                         }
                         if (buttonM[1].beinhaltetPunkt(x, y)&&loesungsButton==1) {
-                            System.out.println("2");
                             punkte();
                             mittel();
 
                         }
                         if (buttonM[2].beinhaltetPunkt(x, y)&&loesungsButton==2) {
-                            System.out.println("3");
                             punkte();
                             mittel();
 
                         }
                         if (buttonM[3].beinhaltetPunkt(x, y)&&loesungsButton==3) {
-                            System.out.println("4");
                             punkte();
                             mittel();
 
@@ -383,10 +421,7 @@ public class Game extends Spiel implements TastenReagierbar {
     }
     public void punkte(){
 
-
         punkte=punkte+10;
-
-        System.out.println("punkte:"+punkte+".");
 
     }
 
@@ -394,8 +429,8 @@ public class Game extends Spiel implements TastenReagierbar {
     @Override
     public void tasteReagieren(int tastenCode) {
         if(tastenCode==KeyEvent.VK_M){
+            setzeAktiveSzene("title");
 
-            System.out.println("d");
         }
 
     }
