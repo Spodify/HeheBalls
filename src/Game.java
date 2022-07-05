@@ -8,14 +8,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-
 public class Game extends Spiel implements TastenReagierbar {
-    public Figur flaggeleicht;
+    public Figur hintergrund;
+    public Figur flaggeleicht;    
     String flaggenNamel;
     public Figur flaggemittel;
     String flaggenNameM;
     public Figur[] buttonL;
     public Figur[] buttonM;
+    public Figur hintergrundG;
 
     public TEXT[] nameFlaggeL;
     public TEXT[] nameFlaggeM;
@@ -36,8 +37,6 @@ public class Game extends Spiel implements TastenReagierbar {
 
 
 
-
-
     public  Game(int width, int height){
         super();
         setzeFensterGroesse(width, height);
@@ -46,12 +45,7 @@ public class Game extends Spiel implements TastenReagierbar {
 
 
 
-
-
-
     }
-
-
 
 
     void titleScreen() {
@@ -79,7 +73,6 @@ public class Game extends Spiel implements TastenReagierbar {
     }
 
 
-
     public void leicht(){
         setzeAktiveSzene("title");
         erzeugeNeueSzene();
@@ -98,7 +91,8 @@ public class Game extends Spiel implements TastenReagierbar {
                 }
         );
     }
-    public void mittel(){
+
+public void mittel(){
         erzeugeNeueSzene();
         flaggenM();
         TastenReagierbar cherryMxBrown;
@@ -114,8 +108,8 @@ public class Game extends Spiel implements TastenReagierbar {
                 }
         );
     }
-    public  void flaggenl(){
 
+public  void flaggenl(){
 
 
         String [] flaggenleicht = {"Amerika", "Belgien", "Brasilien", "China", "Deutschland","England", "Finnland",
@@ -124,13 +118,11 @@ public class Game extends Spiel implements TastenReagierbar {
                 "Schweden", "Spanien", "Suedkorea"};
 
 
-
         if(usedFlags.size()>=flaggenleicht.length*3/4){
             uebergang = usedFlags.get(usedFlags.size()-1);
             usedFlags.clear();
             usedFlags.add(uebergang);
         }
-
 
         Random rand = new Random();
         Random loesung2 = new Random();
@@ -150,7 +142,6 @@ public class Game extends Spiel implements TastenReagierbar {
         flaggeleicht = new Figur("normal","rsc/Flaggen Leicht GIF/"+flaggenNamel+".gif");
         flaggeleicht.setzeMittelpunkt(0,7.5);
         Master = "rsc/Button.gif";
-
 
 
         if (loesungsButton2==0){
@@ -200,21 +191,15 @@ public class Game extends Spiel implements TastenReagierbar {
         }
 
 
-
-
         buttonL = new Figur[4];
-
         buttonL[0] = new Figur("button",Master);
         buttonL[0].setzeMittelpunkt(-3,-2.5);
-
 
         buttonL[1] = new Figur("button",Master);
         buttonL[1].setzeMittelpunkt(7,-2.5);
 
-
         buttonL[2] = new Figur("button",Master);
         buttonL[2].setzeMittelpunkt(-3,-8);
-
 
         buttonL[3] = new Figur("button",Master);
         buttonL[3].setzeMittelpunkt(7,-8);
@@ -243,10 +228,7 @@ public class Game extends Spiel implements TastenReagierbar {
         Punktzahl.setzeInhalt(punkte);
 
 
-
-
         MausKlickReagierbar dieSendungMitDer;
-
         registriereMausKlickReagierbar(
                 dieSendungMitDer = new MausKlickReagierbar() {
 
@@ -271,26 +253,22 @@ public class Game extends Spiel implements TastenReagierbar {
                             punkte();
                             leicht();
 
-
                         }
                     }
 
-
                 });
-
+        
 
     }
-    public void  flaggenM(){
-
-        String [] flaggenmittel = {"Afghanistan", "Ägypten", "Algerien", "Bulgarien", "Chile", "Estland", "Ghana",
-                "Irland", "Jamaika", "Kolumbien", "Kuba", "Niger", "Niger", "Nordmazedonien", "Philipinen", "Saudi Arabien", "Senegal", "Suedafrika",
+public void  flaggenM(){
+        String [] flaggenmittel = {"Afghanistan", "�gypten", "Algerien", "Bulgarien", "Chile", "Estland", "Ghana",
+                "Irland", "Jamaika", "Kolumbien", "Kuba", "Niger", "Nordmazedonien", "Philipinen", "Saudi Arabien", "Senegal", "Suedafrika",
                 "Thailand", "Zypern"};
         if(usedFlags.size()>=flaggenmittel.length*3/4){
             uebergang = usedFlags.get(usedFlags.size()-1);
             usedFlags.clear();
             usedFlags.add(uebergang);
         }
-
 
 
         Random rand2 = new Random();
@@ -388,13 +366,10 @@ public class Game extends Spiel implements TastenReagierbar {
         nameFlaggeM[3].setzeInhalt(bm3);
         nameFlaggeM[3].setzeMittelpunkt(7,-8);
 
-
         Punktzahl = new TEXT(2,2,1,1);
         Punktzahl.setzeInhalt(punkte);
 
-
         MausKlickReagierbar dieSendungMitDer;
-
         registriereMausKlickReagierbar(
                 dieSendungMitDer = new MausKlickReagierbar() {
 
@@ -420,19 +395,18 @@ public class Game extends Spiel implements TastenReagierbar {
                             punkte();
                             mittel();
 
-
                         }
                     }
 
                 });
 
     }
-    public void punkte(){
+
+public void punkte(){
 
         punkte=punkte+10;
 
     }
-
 
     @Override
     public void tasteReagieren(int tastenCode) {
@@ -442,4 +416,5 @@ public class Game extends Spiel implements TastenReagierbar {
         }
 
     }
+
 }
