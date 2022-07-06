@@ -9,14 +9,12 @@ import java.util.List;
 import java.util.Random;
 
 public class Game extends Spiel implements TastenReagierbar {
-    public Figur hintergrund;
-    public Figur flaggeleicht;    
+    public Figur flaggeleicht;
     String flaggenNamel;
     public Figur flaggemittel;
     String flaggenNameM;
     public Figur[] buttonL;
     public Figur[] buttonM;
-    public Figur hintergrundG;
 
     public TEXT[] nameFlaggeL;
     public TEXT[] nameFlaggeM;
@@ -35,6 +33,8 @@ public class Game extends Spiel implements TastenReagierbar {
 
     public TEXT Punktzahl;
 
+    public TEXT Errorelse;
+
 
 
     public  Game(int width, int height){
@@ -52,22 +52,16 @@ public class Game extends Spiel implements TastenReagierbar {
         //benennt die aktive szene und ruft den titleScreen auf
         benenneAktiveSzene("title");
         TitleScreen ts = new TitleScreen();
-        MausKlickReagierbar dieSendungMitDer;
 
         registriereMausKlickReagierbar(
-                dieSendungMitDer = new MausKlickReagierbar() {
-
-                    @Override
-                    public void klickReagieren(double x, double y) {
-                        if (ts.flaggenLeicht.beinhaltetPunkt(x, y)) {
-                            leicht();
-                        }
-                        if (ts.flaggenMittel.beinhaltetPunkt(x, y)) {
-                            mittel();
-
-                        }
+                (x, y) -> {
+                    if (ts.flaggenLeicht.beinhaltetPunkt(x, y)) {
+                        leicht();
                     }
+                    if (ts.flaggenMittel.beinhaltetPunkt(x, y)) {
+                        mittel();
 
+                    }
                 });
 
     }
@@ -84,6 +78,7 @@ public class Game extends Spiel implements TastenReagierbar {
                     public void tasteReagieren(int key) {
                         if (key == KeyEvent.VK_M) {
                             usedFlags.clear();
+                            punkte=0;
                             setzeAktiveSzene("title");
 
                         }
@@ -102,6 +97,7 @@ public void mittel(){
                     public void tasteReagieren(int key) {
                         if (key == KeyEvent.VK_M) {
                             usedFlags.clear();
+                            punkte=0;
                             setzeAktiveSzene("title");
                         }
                     }
@@ -228,40 +224,58 @@ public  void flaggenl(){
         Punktzahl.setzeInhalt(punkte);
 
 
-        MausKlickReagierbar dieSendungMitDer;
-        registriereMausKlickReagierbar(
-                dieSendungMitDer = new MausKlickReagierbar() {
+    registriereMausKlickReagierbar(
+            (x, y) -> {
+                if (buttonL[0].beinhaltetPunkt(x, y)&&loesungsButton2==0) {
+                    punkte();
+                    leicht();
 
-                    @Override
-                    public void klickReagieren(double x, double y) {
-                        if (buttonL[0].beinhaltetPunkt(x, y)&&loesungsButton2==0) {
-                            punkte();
-                            leicht();
+                }
+                if (buttonL[0].beinhaltetPunkt(x, y)&& !(loesungsButton2 ==0)){
+                    Errorelse = new TEXT(3,2,1,1);
+                    Errorelse.setzeInhalt("Falsch");
+                    punkteabziehen();
+                }
 
-                        }
-                        if (buttonL[1].beinhaltetPunkt(x, y)&&loesungsButton2==1) {
-                            punkte();
-                            leicht();
+                if (buttonL[1].beinhaltetPunkt(x, y)&&loesungsButton2==1) {
+                    punkte();
+                    leicht();
 
-                        }
-                        if (buttonL[2].beinhaltetPunkt(x, y)&&loesungsButton2==2) {
-                            punkte();
-                            leicht();
+                }
+                if (buttonL[1].beinhaltetPunkt(x, y)&& !(loesungsButton2 ==0)){
+                    Errorelse = new TEXT(3,2,1,1);
+                    Errorelse.setzeInhalt("Falsch");
+                    punkteabziehen();
 
-                        }
-                        if (buttonL[3].beinhaltetPunkt(x, y)&&loesungsButton2==3) {
-                            punkte();
-                            leicht();
+                }
+                if (buttonL[2].beinhaltetPunkt(x, y)&&loesungsButton2==2) {
+                    punkte();
+                    leicht();
 
-                        }
-                    }
+                }
+                if (buttonL[2].beinhaltetPunkt(x, y)&& !(loesungsButton2 ==0)){
+                    Errorelse = new TEXT(3,2,1,1);
+                    Errorelse.setzeInhalt("Falsch");
+                    punkteabziehen();
+                }
 
-                });
-        
+                if (buttonL[3].beinhaltetPunkt(x, y)&&loesungsButton2==3) {
+                    punkte();
+                    leicht();
+
+                }
+                if (buttonL[3].beinhaltetPunkt(x, y)&& !(loesungsButton2 ==0)){
+                    Errorelse = new TEXT(3,2,1,1);
+                    Errorelse.setzeInhalt("Falsch");
+                    punkteabziehen();
+                }
+            });
+
+
 
     }
 public void  flaggenM(){
-        String [] flaggenmittel = {"Afghanistan", "�gypten", "Algerien", "Bulgarien", "Chile", "Estland", "Ghana",
+        String [] flaggenmittel = {"Afghanistan", "Ägypten", "Algerien", "Bulgarien", "Chile", "Estland", "Ghana",
                 "Irland", "Jamaika", "Kolumbien", "Kuba", "Niger", "Nordmazedonien", "Philipinen", "Saudi Arabien", "Senegal", "Suedafrika",
                 "Thailand", "Zypern"};
         if(usedFlags.size()>=flaggenmittel.length*3/4){
@@ -369,35 +383,52 @@ public void  flaggenM(){
         Punktzahl = new TEXT(2,2,1,1);
         Punktzahl.setzeInhalt(punkte);
 
-        MausKlickReagierbar dieSendungMitDer;
         registriereMausKlickReagierbar(
-                dieSendungMitDer = new MausKlickReagierbar() {
+                (x, y) -> {
+                    //vlt Switch Case
+                    if (buttonM[0].beinhaltetPunkt(x, y)&&loesungsButton==0) {
+                        punkte();
+                        mittel();
 
-                    @Override
-                    public void klickReagieren(double x, double y) {
-                        //vlt Switch Case
-                        if (buttonM[0].beinhaltetPunkt(x, y)&&loesungsButton==0) {
-                            punkte();
-                            mittel();
-
-                        }
-                        if (buttonM[1].beinhaltetPunkt(x, y)&&loesungsButton==1) {
-                            punkte();
-                            mittel();
-
-                        }
-                        if (buttonM[2].beinhaltetPunkt(x, y)&&loesungsButton==2) {
-                            punkte();
-                            mittel();
-
-                        }
-                        if (buttonM[3].beinhaltetPunkt(x, y)&&loesungsButton==3) {
-                            punkte();
-                            mittel();
-
-                        }
+                    }
+                    if (buttonM[0].beinhaltetPunkt(x, y)&& !(loesungsButton==0)){
+                        Errorelse = new TEXT(3,2,1,1);
+                        Errorelse.setzeInhalt("Falsch");
+                        punkteabziehen();
                     }
 
+                    if (buttonM[1].beinhaltetPunkt(x, y)&&loesungsButton==1) {
+                        punkte();
+                        mittel();
+
+                    }
+                    if (buttonM[1].beinhaltetPunkt(x, y)&& !(loesungsButton==0)){
+                        Errorelse = new TEXT(3,2,1,1);
+                        Errorelse.setzeInhalt("Falsch");
+                        punkteabziehen();
+
+                    }
+                    if (buttonM[2].beinhaltetPunkt(x, y)&&loesungsButton==2) {
+                        punkte();
+                        mittel();
+
+                    }
+                    if (buttonM[2].beinhaltetPunkt(x, y)&& !(loesungsButton==0)){
+                        Errorelse = new TEXT(3,2,1,1);
+                        Errorelse.setzeInhalt("Falsch");
+                        punkteabziehen();
+                    }
+
+                    if (buttonM[3].beinhaltetPunkt(x, y)&&loesungsButton==3) {
+                        punkte();
+                        mittel();
+
+                    }
+                    if (buttonM[3].beinhaltetPunkt(x, y)&& !(loesungsButton ==0)){
+                        Errorelse = new TEXT(3,2,1,1);
+                        Errorelse.setzeInhalt("Falsch");
+                        punkteabziehen();
+                    }
                 });
 
     }
@@ -417,4 +448,8 @@ public void punkte(){
 
     }
 
+    public void punkteabziehen(){
+        punkte = punkte-20;
+
+    }
 }
