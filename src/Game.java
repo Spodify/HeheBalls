@@ -134,7 +134,6 @@ public  void flaggenl(){
             flaggenNamel = (flaggenleicht[index]);
         }
         usedFlags.add(flaggenNamel);
-        //rsc/Flaggen Leicht GIF/Amerika.gif
         flaggeleicht = new Figur("normal","rsc/Flaggen Leicht GIF/"+flaggenNamel+".gif");
         flaggeleicht.setzeMittelpunkt(0,7.5);
         Master = "rsc/Button.gif";

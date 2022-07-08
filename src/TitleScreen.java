@@ -14,7 +14,7 @@ public class TitleScreen {
         hintergrundE.setzeMittelpunkt(0,3);
 
         
-        hintergrund = new Figur("background", "rsc/Fortnite45.gif");
+        hintergrund = new Figur("background", "rsc/MenuHintergrund.gif");
         hintergrund.skaliere(3);
         hintergrund.setzeMittelpunkt(0,-3);
         
